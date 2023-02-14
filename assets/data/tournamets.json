@@ -1,0 +1,215 @@
+[
+  {
+    "name": "Ligue 1",
+    "imageSearch": "https://1.bp.blogspot.com/-4zeD0EcWQ7s/X2P0p8asYgI/AAAAAAABgJc/yV8RIBy7EEYATVKsOETuW0oY4HR_73_aQCLcBGAsYHQ/s16000/Ligue%2B1%2BUber%2BEats.png",
+    "selected": false
+  },
+  {
+    "name": "La Liga",
+    "imageSearch": "https://assets.laliga.com/assets/logos/laliga-v/laliga-v-600x600.png",
+    "selected": false
+  },
+
+  {
+    "name": "Premier League",
+    "imageSearch": "https://media.api-sports.io/football/leagues/39.png",
+    "selected": false
+  },
+  {
+    "name": "Bundesliga",
+    "imageSearch": "https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Bundesliga_logo_%282017%29.svg/1200px-Bundesliga_logo_%282017%29.svg.png",
+    "selected": false
+  },
+  {
+    "name": "Serie A",
+    "imageSearch": "https://1.bp.blogspot.com/-YKz5TI53PIY/XNeD1q84RGI/AAAAAAABVEI/X_ZK8SKdjaoAX1i9w1-zV7x-LV-KvUgfgCLcBGAs/s1600/Serie%2BA%2BTim.png",
+    "selected": false
+  },
+
+  {
+    "name": "Primeira Liga",
+    "imageSearch": "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/14.png",
+    "selected": false
+  },
+  {
+    "name": "UEFA Champions League",
+    "imageSearch": "https://b.fssta.com/uploads/application/soccer/competition-logos/UEFAChampionsLeague.png",
+    "selected": false
+  },
+  {
+    "name": "Eredivisie",
+    "imageSearch": "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/11.png",
+    "selected": false
+  },
+  {
+    "name": "Jupiler Pro League",
+    "imageSearch": "https://media.api-sports.io/football/leagues/144.png",
+    "selected": false
+  },
+  {
+    "name": "UEFA Europa League",
+    "imageSearch": "https://a3.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F2310.png",
+    "selected": false
+  },
+  {
+    "name": "Brasileirao",
+    "imageSearch": "https://upload.wikimedia.org/wikipedia/en/thumb/4/42/Campeonato_Brasileiro_S%C3%A9rie_A_logo.png/270px-Campeonato_Brasileiro_S%C3%A9rie_A_logo.png",
+    "selected": false
+  },
+  {
+    "name": "Argentina Primera Division",
+    "imageSearch": "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/1.png",
+    "selected": false
+  },
+
+  {
+    "name": "Ligue 2",
+    "imageSearch": "https://media-3.api-sports.io/football/leagues/62.png",
+    "selected": false
+  },
+  {
+    "name": "Copa de Francia",
+    "imageSearch": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F182.png",
+    "selected": false
+  },
+
+  {
+    "name": "2. Bundesliga",
+    "imageSearch": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/2._Bundesliga_logo.svg/1200px-2._Bundesliga_logo.svg.png",
+    "selected": false
+  },
+
+  {
+    "name": "DFB Pokal",
+    "imageSearch": "https://a1.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F2061.png",
+    "selected": false
+  },
+
+  {
+    "name": "FA Cup",
+    "imageSearch": "https://images.fotmob.com/image_resources/logo/leaguelogo/132.png",
+    "selected": false
+  },
+
+  {
+    "name": "Mundial de Clubes",
+    "imageSearch": "https://media-3.api-sports.io/football/leagues/15.png",
+    "selected": false
+  },
+
+  {
+    "name": "Major League Soccer",
+    "imageSearch": "https://media-3.api-sports.io/football/leagues/253.png",
+    "selected": false
+  },
+
+  {
+    "name": "Uruguay Primera Division",
+    "imageSearch": "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/1592.png",
+    "selected": false
+  },
+  {
+    "name": "Serie B",
+    "imageSearch": "https://media.api-sports.io/football/leagues/72.png",
+    "selected": false
+  },
+  {
+    "name": "Serie C",
+    "imageSearch": "https://media.api-sports.io/football/leagues/75.png",
+    "selected": false
+  },
+  {
+    "name": "UEFA Super Cup",
+    "imageSearch": "https://media.api-sports.io/football/leagues/531.png",
+    "selected": false
+  },
+  
+  {
+    "name": "Copa de portugal",
+    "imageSearch": "https://cdn.footystats.org/img/competitions/portugal-taca-de-portugal.png",
+    "selected": false
+  },
+  
+  {
+    "name": "CONCACAF Champions League",
+    "imageSearch": "https://media.api-sports.io/football/leagues/16.png",
+    "selected": false
+  },
+  {
+    "name": "AFC Champions League",
+    "imageSearch": "https://media.api-sports.io/football/leagues/17.png",
+    "selected": false
+  },
+  
+  {
+    "name": "Liga Smart",
+    "imageSearch": "https://media-3.api-sports.io/football/leagues/141.png",
+    "selected": false
+  },
+  
+  {
+    "name": "Premier League",
+    "imageSearch": "https://media.api-sports.io/football/leagues/235.png",
+    "selected": false
+  },
+  {
+    "name": "Primera A",
+    "imageSearch": "https://media.api-sports.io/football/leagues/239.png",
+    "selected": false
+  },
+  {
+    "name": "Division Profesional - Apertura",
+    "imageSearch": "https://media.api-sports.io/football/leagues/250.png",
+    "selected": false
+  },
+  {
+    "name": "Copa Do Brasil",
+    "imageSearch": "https://media-3.api-sports.io/football/leagues/73.png",
+    "selected": false
+  },
+  
+  {
+    "name": "Primera B",
+    "imageSearch": "https://media.api-sports.io/football/leagues/240.png",
+    "selected": false
+  },
+  
+  {
+    "name": "Copa Argentina",
+    "imageSearch": "https://media.api-sports.io/football/leagues/130.png",
+    "selected": false
+  },
+  
+  
+  {
+    "name": "Liga MX",
+    "imageSearch": "https://media.api-sports.io/football/leagues/262.png",
+    "selected": false
+  },
+  {
+    "name": "Liga de Expansión MX",
+    "imageSearch": "https://media.api-sports.io/football/leagues/263.png",
+    "selected": false
+  },
+ 
+  {
+    "name": "Campeonato Gaucho",
+    "imageSearch": "https://upload.wikimedia.org/wikipedia/pt/f/fc/Gauchao2022.png",
+    "selected": false
+  },
+  
+  
+  {
+    "name": "Division 1",
+    "imageSearch": "https://media.api-sports.io/football/leagues/308.png",
+    "selected": false
+  },
+  
+  {
+    "name": "Division Profesional - Clausura",
+    "imageSearch": "https://media-3.api-sports.io/football/leagues/252.png",
+    "selected": false
+  }
+  
+  
+]
