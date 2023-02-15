@@ -1,5 +1,8 @@
 import 'package:combos_tv/data/data.dart';
+import 'package:combos_tv/screens/home_screen.dart';
+import 'package:combos_tv/screens/matches_display_screen.dart';
 import 'package:combos_tv/utils/colors.dart';
+import 'package:combos_tv/widgets/matches_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -14,22 +17,73 @@ class TournamentsDisplayWidget extends StatefulWidget {
 }
 
 class _TournamentsDisplayWidgetState extends State<TournamentsDisplayWidget> {
-  late List<String> tournaments = [];
+  late dynamic tournaments = [];
   @override
   Widget build(BuildContext context) {
-    return MasonryGridView.count(
-      padding: const EdgeInsets.symmetric(vertical: 10.0),
-      crossAxisSpacing: 15,
-      crossAxisCount: 2,
-      itemCount: products.length,
-      mainAxisSpacing: 10,
-      itemBuilder: (context, index) {
-        return singleItemWidget(
-          products[index],
-          index == products.length - 1 ? true : false,
-        );
-      },
-    );
+    return Scaffold(
+        body: Container(
+          padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
+          child: Column(
+            children: [
+              TextField(
+                // onChanged: (value) => updatrList(value),
+                cursorColor: kOrangeColor.withOpacity(0.8),
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: kGreyColor.withOpacity(0.6),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      borderSide: BorderSide.none),
+                  hintText: "Search",
+                  prefixIcon: const Icon(
+                    Icons.search,
+                    color: Color.fromARGB(255, 182, 182, 182),
+                    size: 25,
+                  ),
+                  prefixIconColor: kGreyColor,
+                ),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Expanded(
+                child: MasonryGridView.count(
+                  padding: const EdgeInsets.symmetric(vertical: 10.0),
+                  crossAxisSpacing: 15,
+                  crossAxisCount: 2,
+                  itemCount: products.length,
+                  mainAxisSpacing: 10,
+                  itemBuilder: (context, index) {
+                    return singleItemWidget(
+                      products[index],
+                      index == products.length - 1 ? true : false,
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerTop,
+        floatingActionButton: tournaments.isEmpty
+            ? Container()
+            : FloatingActionButton.extended(
+                backgroundColor: Colors.orange,
+                onPressed: () {
+                  // MatchesDisplayScreen(
+                  //   personal: tournaments,
+                  // );
+                  // http.post(Uri.parse("http://127.0.0.1:3000/tournamets/"), body: {
+                  //   "list": tournaments,
+                  // });
+                  Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(
+                          builder: (context) => HomeScreen(
+                                list: tournaments,
+                              )),
+                      (Route<dynamic> route) => false);
+                },
+                label: Row(children: [Text("ADD (${tournaments.length})")])));
   }
 
   // single item widget

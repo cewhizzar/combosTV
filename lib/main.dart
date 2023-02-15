@@ -21,6 +21,8 @@ class MyApp extends StatelessWidget {
         darkTheme: ThemeData(
           brightness: Brightness.dark,
         ),
-        home: const HomeScreen());
+        home: const HomeScreen(
+          list: "no",
+        ));
   }
 }

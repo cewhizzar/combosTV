@@ -1,11 +1,19 @@
 import 'package:combos_tv/screens/matches_display_screen.dart';
 import 'package:combos_tv/screens/settings_screen.dart';
 import 'package:combos_tv/utils/colors.dart';
+import 'package:combos_tv/utils/utils.dart';
+import 'package:combos_tv/widgets/matches_widget.dart';
+import 'package:combos_tv/widgets/top_container.dart';
+import 'package:combos_tv/widgets/tournamets_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
-
+  const HomeScreen({
+    super.key,
+    required this.list,
+  });
+  final dynamic list;
+  // dynamic names = tournaments
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -35,14 +43,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   currentIndex = index;
                 });
               },
-              children: const [
+              children: [
                 // ProductDisplayScreen(),
                 // CategoryDisplayScreen(),
                 // IntroScreen()
-                MatchesDisplayScreen(),
+                MatchesDisplayWidget(personal: widget.list),
                 // TestGamesWidget(),
-                SettingsScreen(),
-                SettingsScreen(),
+                const TournamentsDisplayWidget(),
+                const SettingsScreen(),
               ],
             ),
 

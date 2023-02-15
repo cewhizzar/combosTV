@@ -5,7 +5,7 @@ import 'package:combos_tv/widgets/tournamets_widget.dart';
 import 'package:flutter/material.dart';
 
 class MatchesDisplayScreen extends StatefulWidget {
-  const MatchesDisplayScreen({super.key});
+  const MatchesDisplayScreen({super.key, required List<String> personal});
 
   @override
   State<MatchesDisplayScreen> createState() => _MatchesDisplayScreenState();
@@ -35,10 +35,10 @@ class _MatchesDisplayScreenState extends State<MatchesDisplayScreen>
       padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
       child: Column(
         children: [
-          const TopContainer(
-            tabBarValue: 1,
-            searchBarTitle: "Search",
-          ),
+          // const TopContainer(
+          //   tabBarValue: 1,
+          //   searchBarTitle: "Search",
+          // ),
 
           // tab bar and tab views
           TabBar(

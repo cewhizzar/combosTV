@@ -67,6 +67,12 @@ dynamic products = [
     isLiked: false,
   ),
   Product(
+    productName: "Copa Libertadores",
+    productImageUrl:
+        "https://www.thesportsdb.com/images/media/league/badge/mlo2451549460358.png",
+    isLiked: false,
+  ),
+  Product(
     productName: "Brasileirao",
     productImageUrl:
         "https://static.wikia.nocookie.net/fifa/images/3/3b/Brasileir%C3%A3o_Serie_A.png/revision/latest?cb=20180331001747&path-prefix=es",
@@ -108,6 +114,7 @@ dynamic products = [
         "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/2._Bundesliga_logo.svg/1200px-2._Bundesliga_logo.svg.png",
     isLiked: false,
   ),
+
   Product(
     productName: "DFB Pokal",
     productImageUrl:
@@ -127,11 +134,34 @@ dynamic products = [
     isLiked: false,
   ),
   Product(
+    productName: "Liga MX",
+    productImageUrl:
+        "https://a.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F22.png",
+    isLiked: false,
+  ),
+  // Product(
+  //   productName: "Liga de Expansion MX",
+  //   productImageUrl: "https://upload.wikimedia.org/wikipedia/commons/9/93/Ascenso_MX_logo.png",
+  //   isLiked: false,
+  // ),
+  Product(
+    productName: "Liga BetPlay",
+    productImageUrl:
+        "https://a1.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F2061.png",
+    isLiked: false,
+  ),
+  Product(
     productName: "Uruguay Primera Division",
     productImageUrl:
         "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/1592.png",
     isLiked: false,
   ),
+  // Product(
+  //   productName: "Copa Ciudadana Ecuador",
+  //   productImageUrl:
+  //       "https://a1.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F2061.png",
+  //   isLiked: false,
+  // ),
   Product(
     productName: "UEFA Super Cup",
     productImageUrl:

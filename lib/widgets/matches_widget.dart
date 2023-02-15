@@ -2,6 +2,8 @@ import 'package:combos_tv/data/data.dart';
 import 'package:combos_tv/screens/match.dart';
 import 'package:combos_tv/utils/colors.dart';
 import 'package:combos_tv/widgets/top_container.dart';
+import 'package:combos_tv/widgets/tournamets_widget.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -26,14 +28,24 @@ class _MatchesDisplayWidgetState extends State<MatchesDisplayWidget> {
   // late List registerTournametsData = [];
 
   Future getTournamets() async {
-    print("esto viene en tournamets: ${widget.personal}");
-    String url =
-        "http://127.0.0.1:3000/pirlo/match-page?list=${widget.personal}";
-    http.Response response = await http.get(Uri.parse(url));
-    data = json.decode(response.body);
-    setState(() {
-      tournametsData = data['data'];
-    });
+    if (widget.personal == "") {
+      print("esto viene en tournamets: ${widget.personal}, por ende sera 'no'");
+      String url = "http://127.0.0.1:3000/pirlo/match-page?list=no}";
+      http.Response response = await http.get(Uri.parse(url));
+      data = json.decode(response.body);
+      setState(() {
+        tournametsData = data['data'];
+      });
+    } else {
+      print("esto viene en tournamets: ${widget.personal}");
+      String url =
+          "http://127.0.0.1:3000/pirlo/match-page?list=${widget.personal}";
+      http.Response response = await http.get(Uri.parse(url));
+      data = json.decode(response.body);
+      setState(() {
+        tournametsData = data['data'];
+      });
+    }
   }
 
   @override
@@ -44,17 +56,48 @@ class _MatchesDisplayWidgetState extends State<MatchesDisplayWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return RefreshIndicator(
-      color: kOrangeColor.withOpacity(0.8),
-      onRefresh: getTournamets,
-      child: ListView.builder(
-        itemCount: tournametsData.length,
-        itemBuilder: (BuildContext context, int index) {
-          return singleItemWidget(
-            index,
-            index == tournametsData.length - 1 ? true : false,
-          );
-        },
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
+      child: Column(
+        children: [
+          TextField(
+            // onChanged: (value) => updatrList(value),
+            cursorColor: kOrangeColor.withOpacity(0.8),
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: kGreyColor.withOpacity(0.6),
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  borderSide: BorderSide.none),
+              hintText: "Search",
+              prefixIcon: const Icon(
+                Icons.search,
+                color: Color.fromARGB(255, 182, 182, 182),
+                size: 25,
+              ),
+              prefixIconColor: kGreyColor,
+            ),
+          ),
+          const SizedBox(
+            width: 10,
+            height: 8,
+          ),
+          Expanded(
+            child: RefreshIndicator(
+              color: kOrangeColor.withOpacity(0.8),
+              onRefresh: getTournamets,
+              child: ListView.builder(
+                itemCount: tournametsData.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return singleItemWidget(
+                    index,
+                    index == tournametsData.length - 1 ? true : false,
+                  );
+                },
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
