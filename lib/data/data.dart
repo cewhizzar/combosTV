@@ -85,6 +85,35 @@ dynamic products = [
     isLiked: false,
   ),
   Product(
+    productName: "Chile Primera Division",
+    productImageUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/c/cd/Campeonato_Nacional_Petrobras.png",
+    isLiked: false,
+  ),
+  Product(
+    productName: "Liga MX",
+    productImageUrl:
+        "https://a.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F22.png",
+    isLiked: false,
+  ),
+  // Product(
+  //   productName: "Liga de Expansion MX",
+  //   productImageUrl: "https://upload.wikimedia.org/wikipedia/commons/9/93/Ascenso_MX_logo.png",
+  //   isLiked: false,
+  // ),
+  Product(
+    productName: "Liga BetPlay",
+    productImageUrl:
+        "https://1.bp.blogspot.com/-8VfFi4pKjmg/X2P5yVeuFsI/AAAAAAABgLw/Uu3G37wVuPcrFXiw4C82OqBKdElP59XigCLcBGAsYHQ/s0/Liga%2BBetPlay256x.png",
+    isLiked: false,
+  ),
+  Product(
+    productName: "Uruguay Primera Division",
+    productImageUrl:
+        "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/1592.png",
+    isLiked: false,
+  ),
+  Product(
     productName: "Eredivisie",
     productImageUrl:
         "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/11.png",
@@ -133,29 +162,7 @@ dynamic products = [
         "https://i.pinimg.com/originals/41/60/e9/4160e9e356f7ee2746a29a0fbaf92e87.png",
     isLiked: false,
   ),
-  Product(
-    productName: "Liga MX",
-    productImageUrl:
-        "https://a.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F22.png",
-    isLiked: false,
-  ),
-  // Product(
-  //   productName: "Liga de Expansion MX",
-  //   productImageUrl: "https://upload.wikimedia.org/wikipedia/commons/9/93/Ascenso_MX_logo.png",
-  //   isLiked: false,
-  // ),
-  Product(
-    productName: "Liga BetPlay",
-    productImageUrl:
-        "https://a1.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F2061.png",
-    isLiked: false,
-  ),
-  Product(
-    productName: "Uruguay Primera Division",
-    productImageUrl:
-        "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/1592.png",
-    isLiked: false,
-  ),
+
   // Product(
   //   productName: "Copa Ciudadana Ecuador",
   //   productImageUrl:

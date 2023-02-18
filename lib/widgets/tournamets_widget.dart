@@ -2,7 +2,9 @@ import 'package:combos_tv/data/data.dart';
 import 'package:combos_tv/screens/home_screen.dart';
 import 'package:combos_tv/screens/matches_display_screen.dart';
 import 'package:combos_tv/utils/colors.dart';
+import 'package:combos_tv/utils/utils.dart';
 import 'package:combos_tv/widgets/matches_widget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -18,6 +20,7 @@ class TournamentsDisplayWidget extends StatefulWidget {
 
 class _TournamentsDisplayWidgetState extends State<TournamentsDisplayWidget> {
   late dynamic tournaments = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +28,46 @@ class _TournamentsDisplayWidgetState extends State<TournamentsDisplayWidget> {
           padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
           child: Column(
             children: [
+              const SizedBox(
+                height: 27,
+              ),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                const Text(
+                  " Select your favorites",
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w500,
+                    // color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                IconButton(
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (buildcontext) {
+                            return AlertDialog(
+                              title: const Text('Info'),
+                              content: const Text(
+                                  "Touch the heart in your favorites tournaments and press the SAVE button for filter the matches in the list"),
+                              actions: <Widget>[
+                                TextButton(
+                                    child: const Text("CLOSE"),
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    }),
+                              ],
+                            );
+                          });
+                    },
+                    icon: Icon(
+                      Icons.info_outline,
+                      color: kOrangeColor.withOpacity(0.8),
+                    ))
+              ]),
+              const SizedBox(
+                height: 10,
+              ),
               TextField(
                 // onChanged: (value) => updatrList(value),
                 cursorColor: kOrangeColor.withOpacity(0.8),
@@ -68,14 +111,11 @@ class _TournamentsDisplayWidgetState extends State<TournamentsDisplayWidget> {
         floatingActionButton: tournaments.isEmpty
             ? Container()
             : FloatingActionButton.extended(
+                icon: const Icon(Icons.save),
+                hoverElevation: 1000,
+                hoverColor: kOrangeColor.withOpacity(0.8),
                 backgroundColor: Colors.orange,
                 onPressed: () {
-                  // MatchesDisplayScreen(
-                  //   personal: tournaments,
-                  // );
-                  // http.post(Uri.parse("http://127.0.0.1:3000/tournamets/"), body: {
-                  //   "list": tournaments,
-                  // });
                   Navigator.of(context).pushAndRemoveUntil(
                       MaterialPageRoute(
                           builder: (context) => HomeScreen(
@@ -83,7 +123,7 @@ class _TournamentsDisplayWidgetState extends State<TournamentsDisplayWidget> {
                               )),
                       (Route<dynamic> route) => false);
                 },
-                label: Row(children: [Text("ADD (${tournaments.length})")])));
+                label: Row(children: const [Text("SAVE")])));
   }
 
   // single item widget
@@ -150,14 +190,17 @@ class _TournamentsDisplayWidgetState extends State<TournamentsDisplayWidget> {
                           ),
                     onPressed: () {
                       product.isLiked = !product.isLiked;
+                      products.forEach((dynamic league) {
+                        if (league.isLiked == true) {
+                          tournaments.add(league.productName);
+                        }
+                      });
                       setState(() {
                         if (product.isLiked == true) {
                           tournaments.add(product.productName);
-                          print(tournaments);
                         } else if (product.isLiked == false) {
                           tournaments.removeWhere(
                               (element) => element == product.productName);
-                          print(tournaments);
                         }
                       });
                     },

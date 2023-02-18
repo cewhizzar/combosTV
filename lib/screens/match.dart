@@ -35,31 +35,46 @@ class _MatchScreenState extends State<MatchScreen> {
         backgroundColor: const Color.fromARGB(232, 0, 0, 0),
         title: Text(widget.title, style: const TextStyle(color: Colors.orange)),
       ),
-      body: FutureBuilder(
-          future: _initializeVideoPlayerFuture,
-          builder: ((context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
-              return AspectRatio(
-                aspectRatio: _videoControl.value.aspectRatio,
-                child: VideoPlayer(_videoControl),
-              );
-            } else {
-              return const Center(
-                child:
-                    Text("Loading...", style: TextStyle(color: Colors.white)),
-              );
-            }
-          })),
+      body: Column(children: [
+        FutureBuilder(
+            future: _initializeVideoPlayerFuture,
+            builder: ((context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.done) {
+                return AspectRatio(
+                  aspectRatio: _videoControl.value.aspectRatio,
+                  child: VideoPlayer(_videoControl),
+                );
+              } else {
+                return const Center(
+                  child:
+                      Text("Loading...", style: TextStyle(color: Colors.white)),
+                );
+              }
+            })),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextButton(
+              child: Text("OPCION 1"),
+              onPressed: () {},
+            ),
+            TextButton(
+              child: Text("OPCION 2"),
+              onPressed: () {},
+            )
+          ],
+        )
+      ]),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.orange,
         child: Icon(
-          _videoControl.value.isPlaying ? Icons.pause : Icons.play_arrow,
+          _videoControl.value.isPlaying ? Icons.fullscreen : Icons.play_arrow,
         ),
         onPressed: () {
           print("Tap en reproducir matchpage");
           setState(() {
             if (_videoControl.value.isPlaying) {
-              _videoControl.pause();
+              // _videoControl.pause();
             } else {
               _videoControl.play();
             }

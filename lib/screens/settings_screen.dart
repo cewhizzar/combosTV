@@ -14,18 +14,17 @@ class SettingsScreen extends StatelessWidget {
           // User card
 
           SettingsGroup(
+            settingsGroupTitle: "Settings",
             items: [
               SettingsItem(
                 onTap: () {},
                 icons: CupertinoIcons.pencil_outline,
                 iconStyle: IconStyle(backgroundColor: Colors.orange),
-                title: 'Edit',
-                subtitle: "Select yours",
+                title: 'Suggestion',
+                subtitle: "Leave your comment or suggestion",
               ),
               SettingsItem(
-                onTap: () {
-                  
-                },
+                onTap: () {},
                 icons: Icons.dark_mode_rounded,
                 iconStyle: IconStyle(
                   iconsColor: Colors.white,
@@ -35,8 +34,10 @@ class SettingsScreen extends StatelessWidget {
                 title: 'Dark mode',
                 subtitle: "Automatic",
                 trailing: Switch.adaptive(
-                  value: false,
-                  onChanged: (value) {},
+                  value: true,
+                  onChanged: (value) {
+                    value = !value;
+                  },
                 ),
               ),
             ],
@@ -50,13 +51,13 @@ class SettingsScreen extends StatelessWidget {
                   backgroundColor: Colors.orange,
                 ),
                 title: 'About',
-                subtitle: "Learn more about Combos TV",
+                subtitle: "Learn more about us",
               ),
             ],
           ),
           // You can add a settings title
           SettingsGroup(
-            settingsGroupTitle: "Account",
+            settingsGroupTitle: "Go out",
             items: [
               SettingsItem(
                 onTap: () {},
