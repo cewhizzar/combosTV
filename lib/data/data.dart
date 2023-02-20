@@ -114,6 +114,12 @@ dynamic products = [
     isLiked: false,
   ),
   Product(
+    productName: "Paraguay Primera Division",
+    productImageUrl:
+        "https://4.bp.blogspot.com/-6BQv5SOuxn4/XEs537Yz01I/AAAAAAABT-c/aol0uy0p_l8gSbrYVLhz4qu5-GpyGG3lQCLcBGAs/s1600/Copa%2Bde%2BPrimera.png",
+    isLiked: false,
+  ),
+  Product(
     productName: "Eredivisie",
     productImageUrl:
         "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/11.png",
