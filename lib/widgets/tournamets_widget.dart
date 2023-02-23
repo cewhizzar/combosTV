@@ -1,14 +1,9 @@
 import 'package:combos_tv/data/data.dart';
 import 'package:combos_tv/screens/home_screen.dart';
-import 'package:combos_tv/screens/matches_display_screen.dart';
 import 'package:combos_tv/utils/colors.dart';
-import 'package:combos_tv/utils/utils.dart';
-import 'package:combos_tv/widgets/matches_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class TournamentsDisplayWidget extends StatefulWidget {
   const TournamentsDisplayWidget({super.key});
@@ -20,6 +15,8 @@ class TournamentsDisplayWidget extends StatefulWidget {
 
 class _TournamentsDisplayWidgetState extends State<TournamentsDisplayWidget> {
   late dynamic tournaments = [];
+
+  void updateList(String value) {}
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +66,7 @@ class _TournamentsDisplayWidgetState extends State<TournamentsDisplayWidget> {
                 height: 10,
               ),
               TextField(
-                // onChanged: (value) => updatrList(value),
+                onChanged: (value) => updateList(value),
                 cursorColor: kOrangeColor.withOpacity(0.8),
                 decoration: InputDecoration(
                   filled: true,
@@ -157,9 +154,18 @@ class _TournamentsDisplayWidgetState extends State<TournamentsDisplayWidget> {
                       bottomRight: Radius.circular(13),
                     ),
                     // BorderRadius.circular(15),
-                    child: CachedNetworkImage(
-                      imageUrl: product.productImageUrl,
-                      fit: BoxFit.cover,
+                    child: Image(
+                      alignment: Alignment.center,
+                      image: NetworkImage(product.productImageUrl),
+                      errorBuilder: (context, error, stackTrace) {
+                        return Padding(
+                            padding: EdgeInsets.zero,
+                            child: Image.asset(
+                              // alignment: Alignment.center,
+                              "assets/not.png",
+                              fit: BoxFit.contain,
+                            ));
+                      },
                     ),
                   ),
                 ],

@@ -19,6 +19,15 @@ class _MatchesDisplayWidgetState extends State<MatchesDisplayWidget> {
   late List tournametsData = [];
 
   Future getTournamets() async {
+    // var res = await http.Client()
+    //     .get(Uri.parse('https://sozluk.gov.tr/gts?ara=kalem'));
+
+    // var body = res.body;
+    // var decoded = jsonDecode(body);
+    // var json = decoded[0];
+
+    // var sozlukanlam = json["anlamlarListe"][0]["anlam"];
+    // print(sozlukanlam);
     print("esto viene en tournamets: ${widget.personal}");
     String url =
         "http://127.0.0.1:3000/pirlo/match-page?list=${widget.personal}";
@@ -108,17 +117,19 @@ class _MatchesDisplayWidgetState extends State<MatchesDisplayWidget> {
                           //     NetworkImage("${tournametsData[index]["img"]}"),
 
                           child: ClipOval(
-                              child: Image.network(
-                            "${tournametsData[index]["img"]}",
-                            fit: BoxFit.cover,
-                            alignment: Alignment.center,
-                            errorBuilder: (context, error, stackTrace) {
-                              return Image.asset(
-                                "images/nof.PNG",
-                                fit: BoxFit.contain,
-                              );
-                            },
-                          )),
+                              child: Image(
+                                  alignment: Alignment.center,
+                                  image: NetworkImage(
+                                      "${tournametsData[index]["img"]}"),
+                                  errorBuilder: (context, error, stackTrace) {
+                                    return Padding(
+                                        padding: EdgeInsets.zero,
+                                        child: Image.asset(
+                                          // alignment: Alignment.center,
+                                          "assets/not.png",
+                                          fit: BoxFit.contain,
+                                        ));
+                                  })),
                         ),
                       ],
                     ),
@@ -150,7 +161,8 @@ class _MatchesDisplayWidgetState extends State<MatchesDisplayWidget> {
                     onTap: () {
                       dynamic stream = (tournametsData[index]["stream"]);
                       dynamic game = (tournametsData[index]["game"]);
-                      if ((tournametsData[index]["stream"]) != "") {
+                      if ((tournametsData[index]["stream"]) != "" &&
+                          (tournametsData[index]["stream"]) != null) {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => MatchScreen(
                                   title: game,
