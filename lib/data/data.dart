@@ -11,7 +11,7 @@ class Product {
 }
 
 // list of products
-dynamic products = [
+List<Product> products = [
   Product(
     productName: "Premier League",
     productImageUrl:

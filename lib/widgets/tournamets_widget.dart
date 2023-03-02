@@ -14,9 +14,18 @@ class TournamentsDisplayWidget extends StatefulWidget {
 }
 
 class _TournamentsDisplayWidgetState extends State<TournamentsDisplayWidget> {
-  late dynamic tournaments = [];
+  // late dynamic main_tournaments_list = products;
+  late List<String> tournaments = [];
+  late dynamic display_list = List.from(products);
 
-  void updateList(String value) {}
+  void updateList(String value) {
+    setState(() {
+      display_list = products
+          .where((element) =>
+              element.productName.toLowerCase().contains(value.toLowerCase()))
+          .toList();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -91,12 +100,12 @@ class _TournamentsDisplayWidgetState extends State<TournamentsDisplayWidget> {
                   padding: const EdgeInsets.symmetric(vertical: 10.0),
                   crossAxisSpacing: 15,
                   crossAxisCount: 2,
-                  itemCount: products.length,
+                  itemCount: display_list.length,
                   mainAxisSpacing: 10,
                   itemBuilder: (context, index) {
                     return singleItemWidget(
-                      products[index],
-                      index == products.length - 1 ? true : false,
+                      display_list[index],
+                      index == display_list.length - 1 ? true : false,
                     );
                   },
                 ),

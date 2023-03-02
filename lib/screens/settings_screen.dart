@@ -7,6 +7,7 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String valor = "";
     return Padding(
       padding: const EdgeInsets.all(10),
       child: ListView(
@@ -14,10 +15,30 @@ class SettingsScreen extends StatelessWidget {
           // User card
 
           SettingsGroup(
-            settingsGroupTitle: "Settings",
+            settingsGroupTitle: " Settings",
             items: [
               SettingsItem(
-                onTap: () {},
+                onTap: () {
+                  showDialog(
+                      context: context,
+                      builder: (buildcontext) {
+                        return AlertDialog(
+                          title: const Text('Suggestion'),
+                          content: const TextField(
+                            decoration: InputDecoration(
+                                filled: true,
+                                labelText: "ex: Add Premier League"),
+                          ),
+                          actions: <Widget>[
+                            TextButton(
+                                child: const Text("SEND"),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                }),
+                          ],
+                        );
+                      });
+                },
                 icons: CupertinoIcons.pencil_outline,
                 iconStyle: IconStyle(backgroundColor: Colors.orange),
                 title: 'Suggestion',
@@ -45,7 +66,24 @@ class SettingsScreen extends StatelessWidget {
           SettingsGroup(
             items: [
               SettingsItem(
-                onTap: () {},
+                onTap: () {
+                  showDialog(
+                      context: context,
+                      builder: (buildcontext) {
+                        return AlertDialog(
+                          title: const Text('About'),
+                          content: const Text(
+                              "Combos TV it's your soccer place and point."),
+                          actions: <Widget>[
+                            TextButton(
+                                child: const Text("CLOSE"),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                }),
+                          ],
+                        );
+                      });
+                },
                 icons: Icons.info_rounded,
                 iconStyle: IconStyle(
                   backgroundColor: Colors.orange,
@@ -56,16 +94,16 @@ class SettingsScreen extends StatelessWidget {
             ],
           ),
           // You can add a settings title
-          SettingsGroup(
-            settingsGroupTitle: "Go out",
-            items: [
-              SettingsItem(
-                onTap: () {},
-                icons: Icons.exit_to_app_rounded,
-                title: "Sign Out",
-              ),
-            ],
-          ),
+          // SettingsGroup(
+          //   settingsGroupTitle: "Go out",
+          //   items: [
+          //     SettingsItem(
+          //       onTap: () {},
+          //       icons: Icons.exit_to_app_rounded,
+          //       title: "Sign Out",
+          //     ),
+          //   ],
+          // ),
           SettingsGroup(
             items: [],
           )

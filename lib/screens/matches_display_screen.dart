@@ -1,6 +1,5 @@
 import 'package:combos_tv/utils/colors.dart';
 import 'package:combos_tv/widgets/matches_widget.dart';
-import 'package:combos_tv/widgets/top_container.dart';
 import 'package:combos_tv/widgets/tournamets_widget.dart';
 import 'package:flutter/material.dart';
 
