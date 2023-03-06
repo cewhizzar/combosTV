@@ -19,15 +19,6 @@ class _MatchesDisplayWidgetState extends State<MatchesDisplayWidget> {
   late List tournametsData = [];
 
   Future getTournamets() async {
-    // var res = await http.Client()
-    //     .get(Uri.parse('https://sozluk.gov.tr/gts?ara=kalem'));
-
-    // var body = res.body;
-    // var decoded = jsonDecode(body);
-    // var json = decoded[0];
-
-    // var sozlukanlam = json["anlamlarListe"][0]["anlam"];
-    // print(sozlukanlam);
     print("esto viene en tournamets: ${widget.personal}");
     String url =
         "http://127.0.0.1:3000/pirlo/match-page?list=${widget.personal}";
@@ -50,28 +41,6 @@ class _MatchesDisplayWidgetState extends State<MatchesDisplayWidget> {
       padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 12.0),
       child: Column(
         children: [
-          // TextField(
-          //   // onChanged: (value) => updatrList(value),
-          //   cursorColor: kOrangeColor.withOpacity(0.8),
-          //   decoration: InputDecoration(
-          //     filled: true,
-          //     fillColor: kGreyColor.withOpacity(0.6),
-          //     border: OutlineInputBorder(
-          //         borderRadius: BorderRadius.circular(30),
-          //         borderSide: BorderSide.none),
-          //     hintText: "Search",
-          //     prefixIcon: const Icon(
-          //       Icons.search,
-          //       color: Color.fromARGB(255, 182, 182, 182),
-          //       size: 25,
-          //     ),
-          //     prefixIconColor: kGreyColor,
-          //   ),
-          // ),
-          // const SizedBox(
-          //   width: 10,
-          //   height: 8,
-          // ),
           Expanded(
             child: RefreshIndicator(
               color: kOrangeColor.withOpacity(0.8),
@@ -160,6 +129,7 @@ class _MatchesDisplayWidgetState extends State<MatchesDisplayWidget> {
                           ),
                     onTap: () {
                       dynamic stream = (tournametsData[index]["stream"]);
+                      dynamic stream2 = (tournametsData[index]["stream2"]);
                       dynamic game = (tournametsData[index]["game"]);
                       if ((tournametsData[index]["stream"]) != "" &&
                           (tournametsData[index]["stream"]) != null) {
@@ -167,6 +137,7 @@ class _MatchesDisplayWidgetState extends State<MatchesDisplayWidget> {
                             builder: (context) => MatchScreen(
                                   title: game,
                                   stream: stream,
+                                  stream2: stream2,
                                 )));
                       }
                       // print("${tournametsData[index]["game"]}");

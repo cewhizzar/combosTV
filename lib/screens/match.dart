@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:video_player/video_player.dart';
+import 'package:chewie/chewie.dart';
 
 class MatchScreen extends StatefulWidget {
-  const MatchScreen({super.key, required this.title, required this.stream});
+  const MatchScreen(
+      {super.key,
+      required this.title,
+      required this.stream,
+      required this.stream2});
   final String title;
   final String stream;
+  final String stream2;
   @override
   State<MatchScreen> createState() => _MatchScreenState();
 }
@@ -18,6 +24,7 @@ class _MatchScreenState extends State<MatchScreen> {
   void initState() {
     _videoControl = VideoPlayerController.network(widget.stream);
     _initializeVideoPlayerFuture = _videoControl.initialize();
+    _videoControl.play();
     super.initState();
   }
 
@@ -35,19 +42,39 @@ class _MatchScreenState extends State<MatchScreen> {
         backgroundColor: const Color.fromARGB(232, 0, 0, 0),
         title: Text(widget.title, style: const TextStyle(color: Colors.orange)),
       ),
-      body: Column(children: [
+      body:
+          Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         FutureBuilder(
             future: _initializeVideoPlayerFuture,
             builder: ((context, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
                 return AspectRatio(
                   aspectRatio: _videoControl.value.aspectRatio,
-                  child: VideoPlayer(_videoControl),
+                  child: Chewie(
+                      controller: ChewieController(
+                          videoPlayerController: _videoControl,
+                          autoPlay: true,
+                          autoInitialize: true,
+                          looping: false,
+                          aspectRatio: _videoControl.value.aspectRatio,
+                          allowedScreenSleep: false,
+                          showOptions: false,
+                          isLive: true)),
                 );
               } else {
-                return const Center(
-                  child:
-                      Text("Loading...", style: TextStyle(color: Colors.white)),
+                return Column(
+                  children: const [
+                    SizedBox(
+                      height: 150.0,
+                    ),
+                    CircularProgressIndicator(
+                      color: Colors.orange,
+                    ),
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    Text("Loading")
+                  ],
                 );
               }
             })),
@@ -65,22 +92,6 @@ class _MatchScreenState extends State<MatchScreen> {
           ],
         )
       ]),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.orange,
-        child: Icon(
-          _videoControl.value.isPlaying ? Icons.fullscreen : Icons.play_arrow,
-        ),
-        onPressed: () {
-          print("Tap en reproducir matchpage");
-          setState(() {
-            if (_videoControl.value.isPlaying) {
-              // _videoControl.pause();
-            } else {
-              _videoControl.play();
-            }
-          });
-        },
-      ),
     );
   }
 }

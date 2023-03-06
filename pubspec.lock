@@ -29,6 +29,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.4"
+  better_player:
+    dependency: "direct dev"
+    description:
+      name: better_player
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.83"
   boolean_selector:
     dependency: transitive
     description:
@@ -64,6 +71,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.1"
+  chewie:
+    dependency: "direct dev"
+    description:
+      name: chewie
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.4.0"
   clock:
     dependency: transitive
     description:
@@ -170,6 +184,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_widget_from_html_core:
+    dependency: transitive
+    description:
+      name: flutter_widget_from_html_core
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.8.5+3"
   fluttertoast:
     dependency: "direct dev"
     description:
@@ -184,6 +205,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "10.3.0"
+  fwfh_text_style:
+    dependency: transitive
+    description:
+      name: fwfh_text_style
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.22.08+1"
   html:
     dependency: transitive
     description:
@@ -247,6 +275,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
+  nested:
+    dependency: transitive
+    description:
+      name: nested
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   octo_image:
     dependency: transitive
     description:
@@ -317,6 +352,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.11.1"
+  petitparser:
+    dependency: transitive
+    description:
+      name: petitparser
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.1.0"
   platform:
     dependency: transitive
     description:
@@ -345,6 +387,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.4"
+  provider:
+    dependency: transitive
+    description:
+      name: provider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "6.0.5"
   rxdart:
     dependency: transitive
     description:
@@ -483,6 +532,48 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0+2"
+  visibility_detector:
+    dependency: transitive
+    description:
+      name: visibility_detector
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.3"
+  wakelock:
+    dependency: transitive
+    description:
+      name: wakelock
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.6.2"
+  wakelock_macos:
+    dependency: transitive
+    description:
+      name: wakelock_macos
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.0"
+  wakelock_platform_interface:
+    dependency: transitive
+    description:
+      name: wakelock_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.0"
+  wakelock_web:
+    dependency: transitive
+    description:
+      name: wakelock_web
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.0"
+  wakelock_windows:
+    dependency: transitive
+    description:
+      name: wakelock_windows
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.1"
   win32:
     dependency: transitive
     description:
@@ -497,6 +588,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.0+3"
+  xml:
+    dependency: transitive
+    description:
+      name: xml
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "6.1.0"
 sdks:
   dart: ">=2.18.6 <3.0.0"
   flutter: ">=3.3.0"
