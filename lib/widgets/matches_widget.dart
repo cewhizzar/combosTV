@@ -1,10 +1,10 @@
 import 'package:combos_tv/screens/match.dart';
 import 'package:combos_tv/utils/colors.dart';
-
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:combos_tv/data/mysql.dart';
 
 class MatchesDisplayWidget extends StatefulWidget {
   const MatchesDisplayWidget({super.key, required this.personal});
@@ -17,6 +17,21 @@ class MatchesDisplayWidget extends StatefulWidget {
 class _MatchesDisplayWidgetState extends State<MatchesDisplayWidget> {
   late Map data;
   late List tournametsData = [];
+  // var game = "";
+  // var db = Mysql();
+  // Future _getTournaments() async {
+  //   db.getConnection().then((conn) {
+  //     String sql = 'select game from db_new_sport.matches';
+  //     conn.query(sql).then((results) {
+  //       for (var row in results) {
+  //         setState(() {
+  //           game = row[0];
+  //         });
+  //       }
+  //     });
+  //   });
+  //   print(game);
+  // }
 
   Future getTournamets() async {
     print("esto viene en tournamets: ${widget.personal}");
